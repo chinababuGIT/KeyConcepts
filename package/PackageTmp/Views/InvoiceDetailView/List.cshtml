@@ -1,0 +1,52 @@
+﻿@model List<Slbilling.Models.TenantIdInvoiceBreakDownModel>
+@{
+    ViewBag.Title = "Invoice Details";
+    
+}
+<div class="InvoiceDetails">
+    <h2>
+        Invoice Details</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>RegionName</strong>
+                </td>
+                <td>
+                    <strong>FlavorName</strong>
+                </td>
+                <td>
+                    <strong>Tenant Id</strong>
+                </td>
+                <td>
+                    <strong>VM Count</strong>
+                </td>
+                <td>
+                    <strong>Monthly Cpu Used </strong>
+                </td>
+                <td>
+                    <strong>Monthly Cost</strong>
+                </td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.VmCount > 0)
+                {
+                    <tr> <td class="text">@item.RegionName
+                    </td> <td class="text">@item.FlavorName
+                    </td> <td class="text">@item.TenantId
+                    </td> <td class="text">@item.VmCount
+                    </td> <td class="text">@item.CpuCount
+                    </td> <td class="text">@item.CostTotal
+                </td> </tr>    
+                }   
+            }
+        </tbody>
+    </table>
+   
+</div>
+
+<div class="EmailInvoice">
+
+
+</div>
