@@ -1,0 +1,80 @@
+﻿@model List<Slbilling.Models.InvoicePerInstanceBreakDownModel>
+@{
+    ViewBag.Title = "Per Instance BreakDown";                                                                           
+}
+
+<div class="PerInstanceInvoiceDetails">
+    <h2>
+        Invoice Details</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+               <td>
+                    <strong>Region Name</strong>
+                </td>
+                <td>
+                    <strong>Flavor Name</strong>
+                </td>
+                <td>
+                    <strong>Instance Id</strong>
+                </td>
+                <td>
+                    <strong>Launched At</strong>
+                </td>
+                  <td>
+                    <strong>Stopped At</strong>
+                </td>
+                <td>
+                    <strong>Cpu Used </strong>
+                </td>
+                <td>
+                    <strong>Cost</strong>
+                </td>
+                 <td>
+                    <strong>Usage Duration</strong>
+                </td>
+                 <td>
+                    <strong>Cpu Cost Per flavor</strong>
+                </td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+           
+                   <tr> <td class="text">@item.RegionName
+                    </td> <td class="text">@item.FlavorName
+                    </td> <td class="text">@item.InstanceNames
+                    </td> <td class="text">@item.LastLaunched
+                    </td> <td class="text">@item.LastSeen
+                    </td> <td class="text">@item.SubCpuCount
+                    </td> <td class="text">@item.SubCostTotal
+                    </td> <td class="text">@item.Duration
+                    </td> <td class="text">@item.CpuCostPerHour             
+                </td> </tr>    
+                
+            }
+            
+        
+            </tr>
+        </tbody>
+    </table>
+    <table border="1">
+    <tr>
+        <td>
+            Total Cpu
+        </td>
+        <td>
+            @Html.ViewData["TotalCpu"]
+        </td>
+     </tr>
+        <tr>
+        <td>
+            Total Cost
+        </td>
+        <td>
+            @Html.ViewData["TotalCost"]
+        </td>
+    </tr>
+    </table>
+</div>
+
