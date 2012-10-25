@@ -30,6 +30,9 @@ namespace MathmaticQuestion
     //        To find d, we are going to make it as fast as possible.
     //        since (a-b) and b are the smaller numbers of the three, we will find the gcd of them.
     //         and the argument recurse; until it reaches case 1 where a is b. or (a-b) is 0
+    //         Hence recursion:
+    //         Base Case: Case 1. And where gcd on either argument is 0
+    //         Smaller problem: gcd (b,b-a).
     // case3: it is just case2 with a minus sign in front.
 
 
