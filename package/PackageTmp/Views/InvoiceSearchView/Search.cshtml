@@ -40,10 +40,19 @@
             @Html.ValidationMessageFor(model => model.Month)
         </div>
 
+         <div class="editor-label">
+            @Html.LabelFor(model => model.EmailMe)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.EmailMe)
+            @Html.ValidationMessageFor(model => model.EmailMe)
+        </div>
+
         <p>
             <input type="submit" value="Search" />
         </p>
     </fieldset>
  
 }
+
 </div>
