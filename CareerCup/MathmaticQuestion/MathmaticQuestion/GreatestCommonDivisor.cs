@@ -54,13 +54,17 @@ namespace MathmaticQuestion
                 return gcd(b, remainder);
         }
 
+        //static
+
         internal static void GcdNormal() 
         {
             Console.WriteLine("Normal Gcd(10,5)");
             Console.WriteLine("gcd(10, 5): {0}", gcd(10,5));
             Console.WriteLine("gcd(5, 10): {0}",gcd(5, 10));
             Console.WriteLine("gcd(50, 10000): {0}", gcd(50, 10000));
-            Console.WriteLine("gcd(50, 999): {0}", gcd(50, 999));
+            Console.WriteLine("gcd(17, 17): {0}", gcd(17, 17));
+            Console.WriteLine("gcd(2, 17): {0}", gcd(2, 17));
+            Console.WriteLine("gcd(17, 2): {0}", gcd(17, 2));
             Console.WriteLine("Gcd of 0");
             Console.WriteLine("gcd(0, 10): {0}",gcd(0, 10));
             Console.WriteLine("gcd(10, 0): {0}",gcd(5, 0));
