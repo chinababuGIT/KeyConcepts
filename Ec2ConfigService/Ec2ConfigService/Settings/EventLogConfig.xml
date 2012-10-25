@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<EventLogConfig>
+  <Event>
+    <Category>System</Category>
+    <ErrorType>Error</ErrorType>
+    <NumEntries>3</NumEntries>
+    <LastMessageTime>2008-09-10T00:00:00.000Z</LastMessageTime>
+    <AppName></AppName>
+  </Event>
+</EventLogConfig>

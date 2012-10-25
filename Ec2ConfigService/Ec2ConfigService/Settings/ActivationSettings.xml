@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ActivationSettingsTable>
+  <!-- 
+  KMS Servers are searched for/activated against based on 
+  settings in this file.  Each "methodSettings" section is
+  attempted until a KMS server is found and instance is 
+  successfully activated.
+  -->
+  <!-- Try autodiscovery first... -->
+  <!-- NOTE: Autodiscover clears any KMS that is already set! -->
+  <MethodSettings>
+    <SetAutodiscover>true</SetAutodiscover>
+    <TargetKMSServer/>    
+    <DiscoverFromZone/>
+    <ReadFromUserData>false</ReadFromUserData>
+    <LegacySearchZones>false</LegacySearchZones>
+    <DoActivate>true</DoActivate>
+  </MethodSettings>
+  <!-- Try the first virtual IP for VPC instances -->
+  <MethodSettings>
+    <SetAutodiscover>false</SetAutodiscover>
+    <TargetKMSServer>169.254.169.250</TargetKMSServer>
+    <DiscoverFromZone/>
+    <ReadFromUserData>false</ReadFromUserData>
+    <LegacySearchZones>false</LegacySearchZones>
+    <DoActivate>true</DoActivate>
+    <VpcServer>true</VpcServer>
+  </MethodSettings>
+  <!-- Try the backup IP for VPC instances... -->
+  <MethodSettings>
+    <SetAutodiscover>false</SetAutodiscover>
+    <TargetKMSServer>169.254.169.251</TargetKMSServer>
+    <DiscoverFromZone/>
+    <ReadFromUserData>false</ReadFromUserData>
+    <LegacySearchZones>false</LegacySearchZones>
+    <DoActivate>true</DoActivate>
+    <VpcServer>true</VpcServer>
+  </MethodSettings>
+  <!-- 
+  Now search the DNS suffix list.
+  This should already have been set by the SetDNSSuffix plugin,
+  controlled by the setting in the primary config file.
+  -->
+  <MethodSettings>
+    <SetAutodiscover>false</SetAutodiscover>
+    <TargetKMSServer/>
+    <DiscoverFromZone/>
+    <ReadFromUserData>false</ReadFromUserData>
+    <LegacySearchZones>true</LegacySearchZones>
+    <DoActivate>true</DoActivate>
+  </MethodSettings>
+  <GlobalSettings>
+    <LogResultToConsole>true</LogResultToConsole>
+  </GlobalSettings>
+</ActivationSettingsTable>

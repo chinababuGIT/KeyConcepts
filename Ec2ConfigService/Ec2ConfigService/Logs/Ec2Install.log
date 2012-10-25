@@ -1,0 +1,32 @@
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>net stop Ec2config 
+The Ec2Config service is stopping.
+The Ec2Config service was stopped successfully.
+
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>del "C:\Program Files\Amazon\Ec2ConfigService\Logs\Ec2configlog.txt" 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>wmic product where name="Ec2ConfigService" uninstall 
+Executing (\\AMAZONA-VBDKT9D\ROOT\CIMV2:Win32_Product.IdentifyingNumber="{759724F7-64C8-4B92-A95A-52B4C4115D5C}",Name="Ec2ConfigService",Version="2.1.0")->Uninstall()
+Method execution successful.
+Out Parameters:
+instance of __PARAMETERS
+{
+	ReturnValue = 0;
+};
+
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>For /F "tokens=2*" %A IN ('REG QUERY "HKLM\System\CurrentControlSet\Control\Session Manager\Environment" /v PROCESSOR_ARCHITECTURE') DO SET arch=%B 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>SET arch= 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>SET arch=AMD64 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>if "AMD64" EQU "x86" (set installer="Ec2ConfigSetup.msi" )  else (set installer="Ec2ConfigSetup_x64.msi"  ) 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>msiexec.exe /i "Ec2ConfigSetup_x64.msi"  REINSTALLMODE=amus /quiet /log "C:\Program Files\Amazon\Ec2ConfigService\logs\Ec2MsiInstall.log" 
+
+C:\Users\ADMINI~1\AppData\Local\Temp\2\7ZipSfx.000>net start Ec2Config 
+The Ec2Config service is starting.
+The Ec2Config service was started successfully.
+

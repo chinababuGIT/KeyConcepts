@@ -1,0 +1,908 @@
+2012-08-15 02:27:35: Running in foreground...
+2012-08-15 02:27:35: SysprepUtils: Setting bundle/Sysprep operations for Vista/2008.
+2012-08-15 02:27:35: SysprepUtils: Reading Bundle Properties from C:\Program Files\Amazon\Ec2ConfigService\Settings\BundleConfig.xml
+2012-08-15 02:27:35: SysprepUtils: Processing property: AutoSysprep
+2012-08-15 02:27:35: SysprepUtils: Processing property: SetRDPCertificate
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2ConfigureRDP state to Disabled
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2OutputRDPCert state to Enabled
+2012-08-15 02:27:35: SysprepUtils: Processing property: SetPasswordAfterSysprep
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2SetPassword state to Enabled
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2WindowsActivate state to Enabled
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2HandleUserData state to Enabled
+2012-08-15 02:27:35: SysprepUtils: Changing plugin Ec2DynamicBootVolumeSize state to Enabled
+2012-08-15 02:27:35: SysprepUtils: Changing Ec2Config to demand-start
+2012-08-15 02:27:35: SysprepUtils: Sysprep command: 'C:\windows\system32\sysprep\sysprep.exe'
+2012-08-15 02:27:35: SysprepUtils: Sysprep args: '"/unattend:C:\Program Files\Amazon\Ec2ConfigService\sysprep2008.xml" /oobe /shutdown /generalize'
+2012-09-07 05:01:59: Starting Ec2Config service v2.1.1.1
+2012-09-07 05:01:59: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-07 05:02:00: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-07 05:02:00: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-07 05:02:00: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-07 05:02:00: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-07 05:02:00: Waiting for meta-data accessibility...
+2012-09-07 05:02:00: Opening COM port handle to write to the console
+2012-09-07 05:02:11: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-07 05:02:11: Meta-data is now available.
+2012-09-07 05:02:11: Start Time sync
+2012-09-07 05:02:12: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-07 05:02:12: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-07 05:02:12: Loading plugins
+2012-09-07 05:02:12: =========Loading plugin Ec2SetPassword==============
+2012-09-07 05:02:12: Executing in a new thread
+2012-09-07 05:02:12: Plugins default state is Disabled so disable the plugin
+2012-09-07 05:02:12: =========Loading plugin Ec2SetComputerName==============
+2012-09-07 05:02:12: Plugin Ec2SetComputerName is disabled.
+2012-09-07 05:02:12: =========Loading plugin Ec2InitializeDrives==============
+2012-09-07 05:02:13: Executing in a new thread
+2012-09-07 05:02:13: =========Loading plugin Ec2EventLog==============
+2012-09-07 05:02:13: Plugin Ec2EventLog is disabled.
+2012-09-07 05:02:13: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-07 05:02:13: Plugin Ec2ConfigureRDP is disabled.
+2012-09-07 05:02:13: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-07 05:02:13: Executing in a new thread
+2012-09-07 05:02:13: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-07 05:02:13: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-07 05:02:13: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-07 05:02:13: Executing in a new thread
+2012-09-07 05:02:13: =========Loading plugin Ec2WindowsActivate==============
+2012-09-07 05:02:13: Executing in a new thread
+2012-09-07 05:02:13: Checking current volumes for any device name change 
+2012-09-07 05:02:13: Plugins default state is Disabled so disable the plugin
+2012-09-07 05:02:13: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-07 05:02:13: Ec2WindowsActivate: Initializing Activation Plugin...
+2012-09-07 05:02:13: C: is mounted with Volume Name 
+2012-09-07 05:02:13: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-07 05:02:13: Ec2SetPassword: Inititalizing the Windows AMI....
+2012-09-07 05:02:13: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-07 05:02:14: Instance metadata http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key is ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCVOj7DQFfcbYM8s5mfEVXaYKxNlZndKyV9I0ZfdKPPdDBCv/UCVKUuYusSFRWy5hX9QFbs58Z7W+E6XuXwFagah6nq77kpJmcYS0Bvaj7oz+EDVxv5vPqh+9JwSYnlzBzzxS6B1wu2X9FfWl2FJw2+H3IOc9IEpe+VjQ5HVGOXoT/YKAkChuiFrqWEXvcCVmNmoPT//Z/wzKTKhGfepDAYRS6KljA91a0Cx3tvn48Ruw4d/T7r8IL+7ezukescXNhva+P4LJKUo9BtJc+2DWglfVt0twVSofIX/28soZTEd86y2zEgOIM01O8TYSRDMG1WZI5uUmph86+OrtvNdzd/ silverlining
+
+2012-09-07 05:02:14: Ec2SetPassword: Encrypted Password: j0Ty/Nwqc019cCP7Fqhjp4IJOot1RNSHB32GAIOmcf6nrTgX4YfkIhyLsmStTNZmgUNpX0PwVvhy5yV263Tsm6n/hoY8pvRfCALKQZE+cRS2bGYqJbfhcxkXErjECMC10GPl9891woRzTYyjq1yxMz1fZFBN5DO6Ww8S2XrKPEOTKrgQZF9mqNpuhKQEz4P46ype3YBtZsbmzNqV0hFCNWwIOGCVrkMX5lyxefFpwePt8p2BMty/6dZp5y3lhzWbHIhadNxkVQKkCYiL/ujZ8954jSu4/5hsKvnWYJ8VCK8c+2sxyO7W4/4GRxLaaALFYW/9DdLMcG7FIEAhq2pDEQ==
+2012-09-07 05:02:14: Ec2SetPassword: Changing password on the machine 
+2012-09-07 05:02:14: Executing in a new thread
+2012-09-07 05:02:14: Ec2DynamicBootVolumeSize: Begin
+2012-09-07 05:02:14: Ec2DynamicBootVolumeSize: Using temp file: C:\Windows\TEMP\tmp1E0A.tmp
+2012-09-07 05:02:14: Ec2DynamicBootVolumeSize: Running diskpart...
+2012-09-07 05:02:14: Plugins default state is Disabled so disable the plugin
+2012-09-07 05:02:14: =========Loading plugin Ec2HandleUserData==============
+2012-09-07 05:02:14: Executing in a new thread
+2012-09-07 05:02:14: Ec2HandleUserData: Start running user scripts
+2012-09-07 05:02:14: Plugins default state is Disabled so disable the plugin
+2012-09-07 05:02:14: Ec2HandleUserData: Waiting for network accessibility...
+2012-09-07 05:02:15: Ec2HandleUserData: Network is now available.
+2012-09-07 05:02:15: Http response error: The remote server returned an error: (404) Not Found.
+2012-09-07 05:02:15: Ec2HandleUserData: No meta data found for this instance
+2012-09-07 05:02:16: Http response error: The remote server returned an error: (404) Not Found.
+2012-09-07 05:02:16: Ec2WindowsActivate: Attempting to discover settings from zone: us-west-2.compute.internal
+2012-09-07 05:02:16: Ec2WindowsActivate: DNS Query to zone 'us-west-2.compute.internal' was unsuccessful.
+2012-09-07 05:02:16: Ec2WindowsActivate: Attempting to discover settings from zone: us-west-2.ec2-utilities.amazonaws.com
+2012-09-07 05:02:16: Ec2WindowsActivate: Setting KMS to: ec2-50-112-127-254.us-west-2.compute.amazonaws.com:1688
+2012-09-07 05:02:18: Waiting for background plugin to complete: Ec2SetPassword
+2012-09-07 05:02:18: Background plugin complete: Ec2SetPassword
+2012-09-07 05:02:18: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-07 05:02:18: Background plugin complete: Ec2InitializeDrives
+2012-09-07 05:02:18: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-07 05:02:18: Background plugin complete: Ec2OutputRDPCert
+2012-09-07 05:02:18: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-07 05:02:18: Background plugin complete: Ec2SetDriveLetter
+2012-09-07 05:02:18: Waiting for background plugin to complete: Ec2WindowsActivate
+2012-09-07 05:02:20: Ec2WindowsActivate: Product Activation Successful.
+2012-09-07 05:02:22: Ec2DynamicBootVolumeSize: Diskpart returned exit code while Extending the disk.
+2012-09-07 05:02:22: Ec2DynamicBootVolumeSize: 
+2012-09-07 05:02:23: Background plugin complete: Ec2WindowsActivate
+2012-09-07 05:02:23: Waiting for background plugin to complete: Ec2DynamicBootVolumeSize
+2012-09-07 05:02:23: Background plugin complete: Ec2DynamicBootVolumeSize
+2012-09-07 05:02:23: Sending configuration complete event.
+2012-09-07 05:02:23: Windows is Ready to use
+2012-09-09 20:41:15: Starting Ec2Config service v2.1.1.1
+2012-09-09 20:41:15: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-09 20:41:16: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-09 20:41:17: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 20:41:17: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 20:41:17: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 20:41:17: Waiting for meta-data accessibility...
+2012-09-09 20:41:17: Opening COM port handle to write to the console
+2012-09-09 20:41:22: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-09 20:41:22: Meta-data is now available.
+2012-09-09 20:41:22: Start Time sync
+2012-09-09 20:41:22: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-09 20:41:23: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-09 20:41:23: Loading plugins
+2012-09-09 20:41:23: =========Loading plugin Ec2SetPassword==============
+2012-09-09 20:41:23: Plugin Ec2SetPassword is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2SetComputerName==============
+2012-09-09 20:41:23: Plugin Ec2SetComputerName is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2InitializeDrives==============
+2012-09-09 20:41:23: Executing in a new thread
+2012-09-09 20:41:23: =========Loading plugin Ec2EventLog==============
+2012-09-09 20:41:23: Plugin Ec2EventLog is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-09 20:41:23: Plugin Ec2ConfigureRDP is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-09 20:41:23: Executing in a new thread
+2012-09-09 20:41:23: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-09 20:41:23: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-09 20:41:23: Executing in a new thread
+2012-09-09 20:41:23: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-09 20:41:23: =========Loading plugin Ec2WindowsActivate==============
+2012-09-09 20:41:23: Plugin Ec2WindowsActivate is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-09 20:41:23: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-09 20:41:23: =========Loading plugin Ec2HandleUserData==============
+2012-09-09 20:41:23: Plugin Ec2HandleUserData is disabled.
+2012-09-09 20:41:23: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-09 20:41:23: Checking current volumes for any device name change 
+2012-09-09 20:41:23: C: is mounted with Volume Name 
+2012-09-09 20:41:23: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-09 20:41:23: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-09 20:41:23: Background plugin complete: Ec2InitializeDrives
+2012-09-09 20:41:23: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-09 20:41:23: Background plugin complete: Ec2OutputRDPCert
+2012-09-09 20:41:23: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-09 20:41:23: Background plugin complete: Ec2SetDriveLetter
+2012-09-09 20:41:23: Sending configuration complete event.
+2012-09-09 20:41:23: Windows is Ready to use
+2012-09-09 22:36:07: Starting Ec2Config service v2.1.1.1
+2012-09-09 22:36:07: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-09 22:36:08: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-09 22:36:08: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 22:36:08: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 22:36:08: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-09 22:36:08: Waiting for meta-data accessibility...
+2012-09-09 22:36:08: Opening COM port handle to write to the console
+2012-09-09 22:36:13: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-09 22:36:13: Meta-data is now available.
+2012-09-09 22:36:13: Start Time sync
+2012-09-09 22:36:14: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-09 22:36:14: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-09 22:36:14: Loading plugins
+2012-09-09 22:36:14: =========Loading plugin Ec2SetPassword==============
+2012-09-09 22:36:14: Plugin Ec2SetPassword is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2SetComputerName==============
+2012-09-09 22:36:14: Plugin Ec2SetComputerName is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2InitializeDrives==============
+2012-09-09 22:36:14: Executing in a new thread
+2012-09-09 22:36:14: =========Loading plugin Ec2EventLog==============
+2012-09-09 22:36:14: Plugin Ec2EventLog is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-09 22:36:14: Plugin Ec2ConfigureRDP is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-09 22:36:14: Executing in a new thread
+2012-09-09 22:36:14: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-09 22:36:14: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-09 22:36:14: Executing in a new thread
+2012-09-09 22:36:14: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-09 22:36:14: =========Loading plugin Ec2WindowsActivate==============
+2012-09-09 22:36:14: Plugin Ec2WindowsActivate is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-09 22:36:14: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-09 22:36:14: =========Loading plugin Ec2HandleUserData==============
+2012-09-09 22:36:14: Plugin Ec2HandleUserData is disabled.
+2012-09-09 22:36:14: Checking current volumes for any device name change 
+2012-09-09 22:36:14: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-09 22:36:14: C: is mounted with Volume Name 
+2012-09-09 22:36:15: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-09 22:36:15: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-09 22:36:15: Background plugin complete: Ec2InitializeDrives
+2012-09-09 22:36:15: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-09 22:36:15: Background plugin complete: Ec2OutputRDPCert
+2012-09-09 22:36:15: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-09 22:36:15: Background plugin complete: Ec2SetDriveLetter
+2012-09-09 22:36:15: Sending configuration complete event.
+2012-09-09 22:36:15: Windows is Ready to use
+2012-09-10 02:44:00: Starting Ec2Config service v2.1.1.1
+2012-09-10 02:44:00: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 02:44:01: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 02:44:01: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:44:01: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:44:01: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:44:01: Waiting for meta-data accessibility...
+2012-09-10 02:44:01: Opening COM port handle to write to the console
+2012-09-10 02:44:07: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-10 02:44:07: Meta-data is now available.
+2012-09-10 02:44:07: Start Time sync
+2012-09-10 02:44:09: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 02:44:10: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 02:44:10: Loading plugins
+2012-09-10 02:44:10: =========Loading plugin Ec2SetPassword==============
+2012-09-10 02:44:10: Plugin Ec2SetPassword is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 02:44:10: Plugin Ec2SetComputerName is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 02:44:10: Executing in a new thread
+2012-09-10 02:44:10: =========Loading plugin Ec2EventLog==============
+2012-09-10 02:44:10: Plugin Ec2EventLog is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 02:44:10: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 02:44:10: Executing in a new thread
+2012-09-10 02:44:10: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 02:44:10: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 02:44:10: Executing in a new thread
+2012-09-10 02:44:10: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 02:44:10: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 02:44:10: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 02:44:10: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 02:44:10: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 02:44:10: Plugin Ec2HandleUserData is disabled.
+2012-09-10 02:44:10: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 02:44:10: Checking current volumes for any device name change 
+2012-09-10 02:44:10: C: is mounted with Volume Name 
+2012-09-10 02:44:10: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 02:44:10: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 02:44:10: Background plugin complete: Ec2InitializeDrives
+2012-09-10 02:44:10: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 02:44:10: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 02:44:10: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 02:44:10: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 02:44:10: Sending configuration complete event.
+2012-09-10 02:44:10: Windows is Ready to use
+2012-09-10 02:54:49: Starting Ec2Config service v2.1.1.1
+2012-09-10 02:54:49: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 02:54:50: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 02:54:50: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:54:50: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:54:50: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 02:54:50: Waiting for meta-data accessibility...
+2012-09-10 02:54:50: Opening COM port handle to write to the console
+2012-09-10 02:54:58: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-10 02:54:58: Meta-data is now available.
+2012-09-10 02:54:58: Start Time sync
+2012-09-10 02:54:58: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 02:54:59: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 02:54:59: Loading plugins
+2012-09-10 02:54:59: =========Loading plugin Ec2SetPassword==============
+2012-09-10 02:54:59: Plugin Ec2SetPassword is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 02:54:59: Plugin Ec2SetComputerName is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 02:54:59: Executing in a new thread
+2012-09-10 02:54:59: =========Loading plugin Ec2EventLog==============
+2012-09-10 02:54:59: Plugin Ec2EventLog is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 02:54:59: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 02:54:59: Executing in a new thread
+2012-09-10 02:54:59: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 02:54:59: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 02:54:59: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 02:54:59: Executing in a new thread
+2012-09-10 02:54:59: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 02:54:59: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 02:54:59: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 02:54:59: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 02:54:59: Plugin Ec2HandleUserData is disabled.
+2012-09-10 02:54:59: Checking current volumes for any device name change 
+2012-09-10 02:54:59: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 02:54:59: C: is mounted with Volume Name 
+2012-09-10 02:54:59: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 02:54:59: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 02:54:59: Background plugin complete: Ec2InitializeDrives
+2012-09-10 02:54:59: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 02:54:59: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 02:54:59: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 02:54:59: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 02:54:59: Sending configuration complete event.
+2012-09-10 02:54:59: Windows is Ready to use
+2012-09-10 03:06:01: Starting Ec2Config service v2.1.1.1
+2012-09-10 03:06:01: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 03:06:02: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 03:06:02: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:06:02: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:06:02: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:06:02: Waiting for meta-data accessibility...
+2012-09-10 03:06:02: Opening COM port handle to write to the console
+2012-09-10 03:06:09: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-keys/
+reservation-id
+security-groups
+2012-09-10 03:06:09: Meta-data is now available.
+2012-09-10 03:06:09: Start Time sync
+2012-09-10 03:06:25: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 03:06:26: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 03:06:26: Loading plugins
+2012-09-10 03:06:26: =========Loading plugin Ec2SetPassword==============
+2012-09-10 03:06:26: Plugin Ec2SetPassword is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 03:06:26: Plugin Ec2SetComputerName is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 03:06:26: Executing in a new thread
+2012-09-10 03:06:26: =========Loading plugin Ec2EventLog==============
+2012-09-10 03:06:26: Plugin Ec2EventLog is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 03:06:26: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 03:06:26: Executing in a new thread
+2012-09-10 03:06:26: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 03:06:26: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 03:06:26: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 03:06:26: Executing in a new thread
+2012-09-10 03:06:26: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 03:06:26: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 03:06:26: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 03:06:26: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 03:06:26: Plugin Ec2HandleUserData is disabled.
+2012-09-10 03:06:26: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 03:06:26: Checking current volumes for any device name change 
+2012-09-10 03:06:26: C: is mounted with Volume Name 
+2012-09-10 03:06:26: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 03:06:26: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 03:06:26: Background plugin complete: Ec2InitializeDrives
+2012-09-10 03:06:26: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 03:06:26: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 03:06:26: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 03:06:26: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 03:06:26: Sending configuration complete event.
+2012-09-10 03:06:26: Windows is Ready to use
+2012-09-10 03:44:14: Starting Ec2Config service v2.1.1.1
+2012-09-10 03:44:14: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 03:44:15: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 03:44:15: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:44:15: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:44:15: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:44:15: Waiting for meta-data accessibility...
+2012-09-10 03:44:15: Opening COM port handle to write to the console
+2012-09-10 03:44:21: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-10 03:44:21: Meta-data is now available.
+2012-09-10 03:44:21: Start Time sync
+2012-09-10 03:44:23: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 03:44:24: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 03:44:24: Loading plugins
+2012-09-10 03:44:24: =========Loading plugin Ec2SetPassword==============
+2012-09-10 03:44:24: Plugin Ec2SetPassword is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 03:44:24: Plugin Ec2SetComputerName is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 03:44:24: Executing in a new thread
+2012-09-10 03:44:24: =========Loading plugin Ec2EventLog==============
+2012-09-10 03:44:24: Plugin Ec2EventLog is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 03:44:24: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 03:44:24: Executing in a new thread
+2012-09-10 03:44:24: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 03:44:24: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 03:44:24: Executing in a new thread
+2012-09-10 03:44:24: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 03:44:24: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 03:44:24: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 03:44:24: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 03:44:24: Plugin Ec2HandleUserData is disabled.
+2012-09-10 03:44:24: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 03:44:24: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 03:44:24: Checking current volumes for any device name change 
+2012-09-10 03:44:24: C: is mounted with Volume Name 
+2012-09-10 03:44:24: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 03:44:24: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 03:44:24: Background plugin complete: Ec2InitializeDrives
+2012-09-10 03:44:24: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 03:44:24: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 03:44:24: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 03:44:24: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 03:44:24: Sending configuration complete event.
+2012-09-10 03:44:24: Windows is Ready to use
+2012-09-10 03:46:39: Starting Ec2Config service v2.1.1.1
+2012-09-10 03:46:39: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 03:46:40: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 03:46:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:46:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:46:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 03:46:40: Waiting for meta-data accessibility...
+2012-09-10 03:46:40: Opening COM port handle to write to the console
+2012-09-10 03:46:51: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-keys/
+reservation-id
+security-groups
+2012-09-10 03:46:51: Meta-data is now available.
+2012-09-10 03:46:51: Start Time sync
+2012-09-10 03:47:07: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 03:47:07: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 03:47:07: Loading plugins
+2012-09-10 03:47:07: =========Loading plugin Ec2SetPassword==============
+2012-09-10 03:47:07: Plugin Ec2SetPassword is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 03:47:07: Plugin Ec2SetComputerName is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 03:47:07: Executing in a new thread
+2012-09-10 03:47:07: =========Loading plugin Ec2EventLog==============
+2012-09-10 03:47:07: Plugin Ec2EventLog is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 03:47:07: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 03:47:07: Executing in a new thread
+2012-09-10 03:47:07: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 03:47:07: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 03:47:07: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 03:47:07: Executing in a new thread
+2012-09-10 03:47:07: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 03:47:07: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 03:47:07: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 03:47:07: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 03:47:07: Plugin Ec2HandleUserData is disabled.
+2012-09-10 03:47:08: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 03:47:08: Checking current volumes for any device name change 
+2012-09-10 03:47:08: C: is mounted with Volume Name 
+2012-09-10 03:47:08: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 03:47:08: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 03:47:08: Background plugin complete: Ec2InitializeDrives
+2012-09-10 03:47:08: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 03:47:08: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 03:47:08: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 03:47:08: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 03:47:08: Sending configuration complete event.
+2012-09-10 03:47:08: Windows is Ready to use
+2012-09-10 04:04:46: Starting Ec2Config service v2.1.1.1
+2012-09-10 04:04:46: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 04:04:47: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 04:04:48: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:04:48: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:04:48: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:04:48: Waiting for meta-data accessibility...
+2012-09-10 04:04:48: Opening COM port handle to write to the console
+2012-09-10 04:04:53: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-keys/
+reservation-id
+security-groups
+2012-09-10 04:04:53: Meta-data is now available.
+2012-09-10 04:04:53: Start Time sync
+2012-09-10 04:05:09: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 04:05:10: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 04:05:10: Loading plugins
+2012-09-10 04:05:10: =========Loading plugin Ec2SetPassword==============
+2012-09-10 04:05:10: Plugin Ec2SetPassword is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 04:05:10: Plugin Ec2SetComputerName is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 04:05:10: Executing in a new thread
+2012-09-10 04:05:10: =========Loading plugin Ec2EventLog==============
+2012-09-10 04:05:10: Plugin Ec2EventLog is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 04:05:10: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 04:05:10: Executing in a new thread
+2012-09-10 04:05:10: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 04:05:10: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 04:05:10: Executing in a new thread
+2012-09-10 04:05:10: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 04:05:10: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 04:05:10: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 04:05:10: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 04:05:10: Plugin Ec2HandleUserData is disabled.
+2012-09-10 04:05:10: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 04:05:10: Checking current volumes for any device name change 
+2012-09-10 04:05:10: C: is mounted with Volume Name 
+2012-09-10 04:05:10: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 04:05:10: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 04:05:10: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 04:05:10: Background plugin complete: Ec2InitializeDrives
+2012-09-10 04:05:10: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 04:05:10: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 04:05:10: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 04:05:10: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 04:05:10: Sending configuration complete event.
+2012-09-10 04:05:10: Windows is Ready to use
+2012-09-10 04:06:06: Starting Ec2Config service v2.1.1.1
+2012-09-10 04:06:06: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 04:06:07: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 04:06:07: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:06:07: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:06:07: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:06:07: Waiting for meta-data accessibility...
+2012-09-10 04:06:07: Opening COM port handle to write to the console
+2012-09-10 04:06:15: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-keys/
+reservation-id
+security-groups
+2012-09-10 04:06:15: Meta-data is now available.
+2012-09-10 04:06:15: Start Time sync
+2012-09-10 04:06:32: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 04:06:32: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 04:06:32: Loading plugins
+2012-09-10 04:06:32: =========Loading plugin Ec2SetPassword==============
+2012-09-10 04:06:32: Plugin Ec2SetPassword is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 04:06:32: Plugin Ec2SetComputerName is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 04:06:32: Executing in a new thread
+2012-09-10 04:06:32: =========Loading plugin Ec2EventLog==============
+2012-09-10 04:06:32: Plugin Ec2EventLog is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 04:06:32: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 04:06:32: Executing in a new thread
+2012-09-10 04:06:32: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 04:06:32: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 04:06:32: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 04:06:32: Executing in a new thread
+2012-09-10 04:06:32: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 04:06:32: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 04:06:32: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 04:06:32: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 04:06:32: Plugin Ec2HandleUserData is disabled.
+2012-09-10 04:06:32: Checking current volumes for any device name change 
+2012-09-10 04:06:32: C: is mounted with Volume Name 
+2012-09-10 04:06:32: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 04:06:32: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 04:06:32: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 04:06:32: Background plugin complete: Ec2InitializeDrives
+2012-09-10 04:06:32: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 04:06:32: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 04:06:32: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 04:06:32: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 04:06:32: Sending configuration complete event.
+2012-09-10 04:06:32: Windows is Ready to use
+2012-09-10 04:08:48: Starting Ec2Config service v2.1.1.1
+2012-09-10 04:08:48: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 04:08:49: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 04:08:49: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:08:49: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:08:49: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 04:08:49: Waiting for meta-data accessibility...
+2012-09-10 04:08:49: Opening COM port handle to write to the console
+2012-09-10 04:08:57: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-10 04:08:57: Meta-data is now available.
+2012-09-10 04:08:57: Start Time sync
+2012-09-10 04:08:57: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 04:08:58: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 04:08:58: Loading plugins
+2012-09-10 04:08:58: =========Loading plugin Ec2SetPassword==============
+2012-09-10 04:08:58: Plugin Ec2SetPassword is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 04:08:58: Plugin Ec2SetComputerName is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 04:08:58: Executing in a new thread
+2012-09-10 04:08:58: =========Loading plugin Ec2EventLog==============
+2012-09-10 04:08:58: Plugin Ec2EventLog is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 04:08:58: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 04:08:58: Executing in a new thread
+2012-09-10 04:08:58: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 04:08:58: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 04:08:58: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 04:08:58: Executing in a new thread
+2012-09-10 04:08:58: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 04:08:58: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 04:08:58: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 04:08:58: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 04:08:58: Plugin Ec2HandleUserData is disabled.
+2012-09-10 04:08:58: Checking current volumes for any device name change 
+2012-09-10 04:08:58: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 04:08:58: C: is mounted with Volume Name 
+2012-09-10 04:08:58: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 04:08:58: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 04:08:58: Background plugin complete: Ec2InitializeDrives
+2012-09-10 04:08:58: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 04:08:58: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 04:08:58: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 04:08:58: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 04:08:58: Sending configuration complete event.
+2012-09-10 04:08:58: Windows is Ready to use
+2012-09-10 06:20:38: Starting Ec2Config service v2.1.1.1
+2012-09-10 06:20:38: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 06:20:39: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 06:20:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:20:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:20:40: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:20:40: Waiting for meta-data accessibility...
+2012-09-10 06:20:40: Opening COM port handle to write to the console
+2012-09-10 06:20:47: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+2012-09-10 06:20:47: Meta-data is now available.
+2012-09-10 06:20:47: Start Time sync
+2012-09-10 06:20:48: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 06:20:48: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 06:20:48: Loading plugins
+2012-09-10 06:20:48: =========Loading plugin Ec2SetPassword==============
+2012-09-10 06:20:48: Plugin Ec2SetPassword is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 06:20:48: Plugin Ec2SetComputerName is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 06:20:48: Executing in a new thread
+2012-09-10 06:20:48: =========Loading plugin Ec2EventLog==============
+2012-09-10 06:20:48: Plugin Ec2EventLog is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 06:20:48: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 06:20:48: Executing in a new thread
+2012-09-10 06:20:48: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 06:20:48: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 06:20:48: Executing in a new thread
+2012-09-10 06:20:48: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 06:20:48: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 06:20:48: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 06:20:48: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 06:20:48: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 06:20:48: Plugin Ec2HandleUserData is disabled.
+2012-09-10 06:20:48: Checking current volumes for any device name change 
+2012-09-10 06:20:48: C: is mounted with Volume Name 
+2012-09-10 06:20:48: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 06:20:49: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 06:20:49: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 06:20:49: Background plugin complete: Ec2InitializeDrives
+2012-09-10 06:20:49: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 06:20:49: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 06:20:49: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 06:20:49: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 06:20:49: Sending configuration complete event.
+2012-09-10 06:20:49: Windows is Ready to use
+2012-09-10 06:27:27: Starting Ec2Config service v2.1.1.1
+2012-09-10 06:27:27: Reading C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml
+2012-09-10 06:27:28: EC2AddRoute: Adding Routes to Adapter with index: 13
+2012-09-10 06:27:28: EC2AddRoute: Successfully added the Ip Route: 169.254.169.254 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:27:28: EC2AddRoute: Successfully added the Ip Route: 169.254.169.250 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:27:28: EC2AddRoute: Successfully added the Ip Route: 169.254.169.251 mask: 255.255.255.255 gateway: 0.0.0.0 NIC index: 13
+2012-09-10 06:27:28: Waiting for meta-data accessibility...
+2012-09-10 06:27:28: Opening COM port handle to write to the console
+2012-09-10 06:27:38: Instance metadata http://169.254.169.254/latest/meta-data is ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-keys/
+reservation-id
+security-groups
+2012-09-10 06:27:38: Meta-data is now available.
+2012-09-10 06:27:38: Start Time sync
+2012-09-10 06:27:54: Sync Request Submitted to W32Time Service. Exit code: 0
+2012-09-10 06:28:01: Ec2SetDnsSuffixes: Setting new suffix list...
+2012-09-10 06:28:01: Loading plugins
+2012-09-10 06:28:01: =========Loading plugin Ec2SetPassword==============
+2012-09-10 06:28:01: Plugin Ec2SetPassword is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2SetComputerName==============
+2012-09-10 06:28:01: Plugin Ec2SetComputerName is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2InitializeDrives==============
+2012-09-10 06:28:01: Executing in a new thread
+2012-09-10 06:28:01: =========Loading plugin Ec2EventLog==============
+2012-09-10 06:28:01: Plugin Ec2EventLog is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2ConfigureRDP==============
+2012-09-10 06:28:01: Plugin Ec2ConfigureRDP is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2OutputRDPCert==============
+2012-09-10 06:28:01: Executing in a new thread
+2012-09-10 06:28:01: Ec2OutputRDPCert: Start Ec2OutputRDPCert
+2012-09-10 06:28:01: =========Loading plugin Ec2SetDriveLetter==============
+2012-09-10 06:28:01: Ec2InitializeDrives: Found Disk : \\.\PHYSICALDRIVE0
+2012-09-10 06:28:01: Executing in a new thread
+2012-09-10 06:28:01: =========Loading plugin Ec2WindowsActivate==============
+2012-09-10 06:28:01: Plugin Ec2WindowsActivate is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2DynamicBootVolumeSize==============
+2012-09-10 06:28:01: Plugin Ec2DynamicBootVolumeSize is disabled.
+2012-09-10 06:28:01: =========Loading plugin Ec2HandleUserData==============
+2012-09-10 06:28:01: Plugin Ec2HandleUserData is disabled.
+2012-09-10 06:28:01: Ec2OutputRDPCert: Thumprint of RDP certificate is 3DBD97628F9AE4C5B2832831CAEC446C5D25D647
+2012-09-10 06:28:01: Ec2InitializeDrives: Initialization finished.  Plugin exiting...
+2012-09-10 06:28:01: Checking current volumes for any device name change 
+2012-09-10 06:28:01: C: is mounted with Volume Name 
+2012-09-10 06:28:01: Waiting for background plugin to complete: Ec2InitializeDrives
+2012-09-10 06:28:01: Background plugin complete: Ec2InitializeDrives
+2012-09-10 06:28:01: Waiting for background plugin to complete: Ec2OutputRDPCert
+2012-09-10 06:28:01: Background plugin complete: Ec2OutputRDPCert
+2012-09-10 06:28:01: Waiting for background plugin to complete: Ec2SetDriveLetter
+2012-09-10 06:28:01: Background plugin complete: Ec2SetDriveLetter
+2012-09-10 06:28:01: Sending configuration complete event.
+2012-09-10 06:28:01: Windows is Ready to use
