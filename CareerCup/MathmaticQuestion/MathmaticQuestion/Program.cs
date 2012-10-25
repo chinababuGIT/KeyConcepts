@@ -8,7 +8,7 @@ namespace MathmaticQuestion
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void SimpleModOpertorDemo() 
         {
             SimpleModularArithmatic.ModMethod(10, 5);
             SimpleModularArithmatic.ModMethod(5, 10);
@@ -24,7 +24,19 @@ namespace MathmaticQuestion
             catch (DivideByZeroException ex)
             {
                 Console.WriteLine("\n DivdeByZeroException " + ex);
-            }
+            }        
+        
+        }
+
+        static void GcdSampleTest()
+        {
+            GreatestCommonDivisor.GcdNormal();
+        }
+
+        public static void Main(string[] args)
+        {
+            //SimpleModOpertorDemo();
+            GcdSampleTest();
         }
     }
 }
