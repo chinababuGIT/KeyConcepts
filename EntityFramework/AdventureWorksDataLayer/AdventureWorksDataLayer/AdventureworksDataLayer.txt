@@ -1,0 +1,13 @@
+﻿Prereq:
+- use Entitytframeowrk 5
+- sqlserver managemet studio (download form microsoft)
+- use adventrueworks 2005 db.
+
+Tools:
+*  entityframework profiler (Eprof)
+   http://www.hibernatingrhinos.com/products/efprof
+*  Effort (unit test framework for entityframework)
+   http://effort.codeplex.com/
+
+Topics to cover:
+
