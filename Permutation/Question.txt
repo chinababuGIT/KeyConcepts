@@ -1,9 +1,30 @@
-String Permutations
-Printing all permutations of a string is a very common interview question. We'll discuss this problem and some interesting variations of it. The original problem of string permutation says, "print all permutations of a string". As an example, if the string is "abc" there are 6 permutations {abc, acb, bac, bca, cab, cba}. Assume that string contains no duplicate elements.
+Intervew questionn:
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+string Permutations
+Printing all permutations of a string is a very common interview question. 
+We'll discuss this problem and some interesting variations of it. 
+The original problem of string permutation says, "print all permutations of a string".
+As an example, if the string is "abc" there are 6 permutations {abc, acb, bac, bca, cab, cba}. 
+Assume that string contains no duplicate elements.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Variations:
+Lets us assume that string can contain duplicates. 
+How do we print all non-redundant permutations of the string. 
+For ex. If string is "abab" the permutations are {baab, abba, abab, baba, bbaa, aabb}
+Some other constraints could be added to make the problem more interesting. 
+One such constrain could be of partial ordering of characters. 
+For Ex. 'a' should appear before 'c', and 'b' should appear before 'c' in all permutations. 
+There can exist ordering that leads to no permutation of the string such as 'a' precedes 'b', 'b' precedes 'c', 'c' precedes 'a'. 
+Additionally implementing the permutation algorithm in these cases require checking for ordering violation 
+at each permutation level or just at the leaf of recursion, 
+depending on whether checking for ordering violations is more costly or generating all permutations. 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Print out the permutation in a random order. Finding the next permutation on some order meaning that
+the listing is not random. List all permution but on a random order.
 
-Lets us assume that string can contain duplicates. How do we print all non-redundant permutations of the string. For ex. If string is "abab" the permutations are {baab, abba, abab, baba, bbaa, aabb}
 
-Some other constraints could be added to make the problem more interesting. One such constrain could be of partial ordering of characters. For Ex. 'a' should appear before 'c', and 'b' should appear before 'c' in all permutations. There can exist ordering that leads to no permutation of the string such as 'a' precedes 'b', 'b' precedes 'c', 'c' precedes 'a'. Additionally implementing the permutation algorithm in these cases require checking for ordering violation at each permutation level or just at the leaf of recursion, depending on whether checking for ordering violations is more costly or generating all permutations. 
 
-An interesting problem, that talks of special kind of ordering and can be very efficiently computed is as follows: Assume that the string is made up of equal number of '{' and '}'. You need to print all permutations of this string which could satisfy a C compiler i.e. an ending bracket is balanced by an opening bracket. For ex. for '{{}}' the permutations are [{{}}, {}{}].  
+An interesting problem, that talks of special kind of ordering and can be very efficiently computed is as follows: 
+Assume that the string is made up of equal number of '{' and '}'. 
+You need to print all permutations of this string which could satisfy a C compiler i.e. an ending bracket is balanced by an opening bracket. For ex. for '{{}}' the permutations are [{{}}, {}{}].  
 

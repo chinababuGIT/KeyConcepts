@@ -1,0 +1,26 @@
+Some math background.
+
+A Permutation of a Set is an rearrangement of an order from a Set. The order in which the arrangement be made
+can be of strictly order (decending/accending) or any degree of partial order. Regardless of what order the
+permutation is generated, the resultant sets are the same. 
+
+When printing ALL permutation, we can choose one starting point then generate the next permutation per some order.
+Method1. 
+Assume given a Set {a3, a2, a10 ..... ai..... an}. Each element a is of length n; 
+and is made up of alphabet from set {b1,b2,b3....bn}.
+Outline:
+Arrange such that {b1,b2,b3....bn} to be strictly increasing. b1 being the smallest.
+T =  minimal element (MSB ....LSB) MSB: most significant alphabet. 
+     ie. bn,.......b3,b2,b1
+int currentIndex = 1
+while(the index to add has not reached MSB and that 
+      the current index is not greater than MSB index)
+(
+	Get the elemtn that is the next one larger that the Least Significant Index
+	T =  swap(current alphabet at index i, next larger alphabet).
+	Print.
+	if(next larger elmemt > MSB)
+	   i++
+)
+
+
