@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="DFAB29BE-EBCA-4875-9F62-214AF1C4617C" ModuleId="RotateMatrixBy90" />
+  <Module PersistentId="C6092BC9-F4E2-49B6-B802-70F1ACA1A5B4" ModuleId="RotatableMatrix" />
+</Modules>

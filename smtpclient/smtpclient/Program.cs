@@ -14,7 +14,7 @@ namespace smtpclient
     {
         static void Main(string[] args)
         {
-            var fromAdress = new MailAddress("ed_tsang@yahoo.com", "slbilling");
+            var fromAdress = new MailAddress("ed_tsang@attcompute.com", "slbilling");
             var toAddress = new MailAddress("tsangwngkein@gmail.com", "slbilling test");
 
             MailMessage mailMessage = new MailMessage(fromAdress, toAddress)
@@ -28,8 +28,8 @@ namespace smtpclient
 
             using (SmtpClient smtp = new SmtpClient
             {
-                Host = "smtp.mail.yahoo.com",
-                Port = 587,
+                Host = "outbound.smtp.usi.net",
+                Port = 25,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromAdress.Address, "pdrpass1"),

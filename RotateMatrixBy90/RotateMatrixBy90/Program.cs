@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 //From Crackin the Coding Interview FourthEdition
@@ -19,6 +18,8 @@ using System.Text;
 //(1,yer,
 
 //
+using System;
+using RotatableMatrix;
 
 namespace RotateMatrixBy90
 {
@@ -26,6 +27,8 @@ namespace RotateMatrixBy90
     {
         static void Main(string[] args)
         {
+            Matrix _matrix = new Matrix(10,10);
+            _matrix.Print();
         }
     }
 }
