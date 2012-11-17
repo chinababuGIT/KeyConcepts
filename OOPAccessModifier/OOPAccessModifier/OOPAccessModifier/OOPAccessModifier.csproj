@@ -49,6 +49,12 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InterfaceAccess\InterfaceAccess.csproj">
+      <Project>{929F4BC9-E421-4484-AF6C-AD527DD1DAD8}</Project>
+      <Name>InterfaceAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
