@@ -1,0 +1,20 @@
+Model View Controller (MVC)
+Controller is the centerpiece that decouples the View from the Model.
+User Interaction --> View --> Model
+						| --> Controller
+
+Controller handles the incoming event (event dispatcher)
+Model manages the behaviour and data of the app domai
+View generated user interface. Interacts with View and Model
+Variant 
+model - view -observer- controller 
+
+
+Where there is incoming data coming from the model to be updated to the View.
+
+
+Model View Presenter (MVP)
+
+
+
+Model View - View Model
