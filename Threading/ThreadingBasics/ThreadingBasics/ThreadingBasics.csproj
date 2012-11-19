@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaiscThreadingOperation.cs" />
+    <Compile Include="CondiionalVar.cs" />
     <Compile Include="ClassVsStruct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="ThreadingPattern\CreateThreadBarrier.cs" />
     <Compile Include="ThreadingPattern\CreateThreadExecInCircle.cs" />
     <Compile Include="ThreadingPattern\MyBasicReaderWriterLock.cs" />
+    <Compile Include="ThreadingPattern\SynchronizationUsingHandles.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
