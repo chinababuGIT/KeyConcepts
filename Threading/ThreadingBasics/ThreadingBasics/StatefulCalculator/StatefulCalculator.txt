@@ -1,0 +1,5 @@
+﻿Write a statefuel calculator such that
+it simulates N users trying to solve some equations/computations.
+-Write results on console on share results
+-For each user display their own result on their own action
+-When the calculator reaches a result, it tells the user the answer

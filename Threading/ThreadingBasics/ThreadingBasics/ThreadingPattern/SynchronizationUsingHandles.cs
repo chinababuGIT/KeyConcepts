@@ -20,10 +20,10 @@ namespace ThreadingBasics.ThreadingPattern
 
         public void SendPing()
         {
-            bool localVar;
+            bool localVar = false; ;
             lock(padLockSendPing)
             {
-               readyToSendPong
+               //readyToSendPong
                
             }
             Console.WriteLine("SendPing " + localVar);
@@ -31,7 +31,7 @@ namespace ThreadingBasics.ThreadingPattern
 
         public void SendPoing()
         {
-            bool localVar;
+            bool localVar =false;
             lock(padLockSendPong)
             {
                 readyToSendPing = true;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using ThreadingBasics.ThreadingPattern;
+using ThreadingBasics.ThreadingDataStructure;
 
 namespace ThreadingBasics
 {
@@ -17,7 +18,13 @@ namespace ThreadingBasics
             //BlockForEver();
             //ConditionalVariableDeadLockDemo();
             //ReadWriteVariable();
-            SendPingPongUsingWaitHandle();
+            //SendPingPongUsingWaitHandle();
+            
+            //ThreadsABAlternateWait.AlternateWait();
+            SimpleMultualExclusiong.MultualExclusionUsingMultex();
+            //SimpleMultualExclusiong.MultutualExclusionUsingLock();
+            SimpleMultualExclusiong.MultualExclusiongUsingSemaphore();
+            SimpleMultualExclusiong.MultualExclusionUsingMonitor();
         }
 
         static void SendPingPong() 
@@ -65,6 +72,7 @@ namespace ThreadingBasics
                     }
                 );
             sendPong.Start();
+
             sendPing.Join();
             sendPong.Join();
           
