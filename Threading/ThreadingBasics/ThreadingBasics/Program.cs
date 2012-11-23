@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,26 +22,92 @@ namespace ThreadingBasics
             //SendPingPongUsingWaitHandle();
             
             //ThreadsABAlternateWait.AlternateWait();
-            SimpleMultualExclusiong.MultualExclusionUsingMultex();
+            //SimpleMultualExclusiong.MultualExclusionUsingMultex();
             //SimpleMultualExclusiong.MultutualExclusionUsingLock();
-            SimpleMultualExclusiong.MultualExclusiongUsingSemaphore();
-            SimpleMultualExclusiong.MultualExclusionUsingMonitor();
+            //SimpleMultualExclusiong.MultualExclusiongUsingSemaphore();
+            //SimpleMultualExclusiong.MultualExclusionUsingMonitor();
+            TestMultiplex();
+            //SemaphoreMultiplex();
+        }
+
+        static void SemaphoreMultiplex() 
+        {
+            counter = 0;
+            Semaphore multiple = new Semaphore(0, 10);
+            multiple.Release();
+            ConcurrentQueue<int> answer = new ConcurrentQueue<int>();
+
+            //multiple.
+            Random ex = new Random();
+            Thread[] array = new Thread[50];
+            for (int i = 0; i < 50; i++) 
+            {
+                array[i] = new Thread(
+                        () =>
+                        {
+                            multiple.WaitOne();
+                            counter = 1 + counter;
+                            Thread.Sleep(ex.Next(67));
+                            multiple.Release();
+                            answer.Enqueue(counter);
+                        }
+                    );
+                array[i].Start();
+               
+            }
+            foreach (var t in array) 
+            {
+                t.Join();
+            }
+
+            var s = answer.Distinct();
+            foreach (var t in answer)
+            {
+                Console.WriteLine("count {0} and t {1}", t, answer.Count());
+            };
+        }
+
+
+        static int counter;
+        static void TestMultiplex() 
+        {
+            counter = 0;
+            ThreadMultiplex multiplex = new ThreadMultiplex(100);
+            Random exec = new Random();
+            Thread[] threadArray = new Thread[1000];
+            ConcurrentStack<int> answer = new ConcurrentStack<int>();
+            for (int i = 0; i < 1000; i++) 
+            {
+                int temp = -1;
+                threadArray[i] = new Thread(
+                        ()=>{
+                            multiplex.Enter();
+                            Thread.Sleep(exec.Next(586));
+                            temp = ++counter;
+                            multiplex.Release();
+                            Thread.Sleep(exec.Next(86));
+                            answer.Push(temp);       
+                        }
+                    );
+                threadArray[i].Start();
+                //Console.WriteLine(temp);
+            }
+
+            foreach (var t in threadArray) 
+            {
+                t.Join();
+            }
+
+            foreach(var t in answer)
+            {
+                Console.WriteLine(t);
+            }
         }
 
         static void SendPingPong() 
         {
             PingPongUsingLocks pingPong = new PingPongUsingLocks();
-            //while (true)
-            ////{
-            //    var ping = new Thread(
-
-            //        );
-            //    ping.Start();
-            //    var pong = new Thread(
-
-            //        );
-            //    pong.Start();
-            ////}
+  
         }
 
         static EventWaitHandle _readyToSendPing = new AutoResetEvent(false);

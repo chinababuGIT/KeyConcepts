@@ -85,6 +85,7 @@
     <Compile Include="ThreadingDataStructure\ReaderWriterLock.cs" />
     <Compile Include="ThreadingDataStructure\ThreadedFirstInFirstoutQueuet.cs" />
     <Compile Include="ThreadingDataStructure\ThreadList.cs" />
+    <Compile Include="ThreadingDataStructure\ThreadMultiplex.cs" />
     <Compile Include="ThreadingDataStructure\ThreadPoolDesign.cs" />
     <Compile Include="ThreadingDataStructure\ThreadQueue.cs" />
     <Compile Include="ThreadingDataStructure\ThreadsABAlternateWait.cs" />

@@ -16,9 +16,10 @@ namespace ThreadingBasics.ThreadingPattern
             Mutex writeMultex = new Mutex(false, "MultexSimpleCountingExample");
             answer.Clear();
             count = 0;
+            Thread[] threadArray = new Thread[1000];
             for (int i = 0; i < 1000; ++i)      
             {
-                var writeThread = new Thread(
+                threadArray[i] = new Thread(
                         () => {
                             writeMultex.WaitOne();
                             var result = WriteThread(executionLengthRadomizer);
@@ -27,8 +28,13 @@ namespace ThreadingBasics.ThreadingPattern
                             answer.Push(result);
                         }
                     );
-                writeThread.Start();
+                threadArray[i].Start();
                // writeThread.Join();                
+            }
+
+            foreach (var t in threadArray)
+            {
+                t.Join();
             }
 
             foreach(var item in answer){
@@ -49,9 +55,10 @@ namespace ThreadingBasics.ThreadingPattern
             Semaphore writeSem = new Semaphore(1, 1);
             answer.Clear();
             Random executionLengthRand = new Random();
+            Thread[] threadArray = new Thread[1000];
             for (int i = 0; i < 1000; i++) 
             {
-                var t = new Thread(
+                threadArray[i] = new Thread(
                         () =>
                         {
                             int temp = -1;
@@ -65,8 +72,14 @@ namespace ThreadingBasics.ThreadingPattern
                         }
                     );
 
-                t.Start();
+                threadArray[i].Start();
             }
+
+            foreach (var t in threadArray)
+            {
+                t.Join();
+            }
+
             foreach (var item in answer.Reverse()) 
             {
                 Console.WriteLine(item);
@@ -76,27 +89,41 @@ namespace ThreadingBasics.ThreadingPattern
         public static void MultualExclusionUsingMonitor()
         {
             count = 0;
-            object writeLock = new object();
-            var lockSuccess = Monitor.TryEnter(writeLock);
+            object writeLock = new object(); 
             answer.Clear();
+            //var lockSuccess = Monitor.TryEnter(writeLock);
+            //answer.Clear();
             Random executionLengthRand = new Random();
-            for (int i = 0; i < 1000; ++i) { 
-                var t = new Thread
+            Thread[] threadArray = new Thread[1000];
+            //var lockSuccess = Monitor.TryEnter(writeLock);
+            for (int i = 0; i < 1000; ++i) {
+                threadArray[i] = new Thread
                     (
                         ()=>{
                             int temp =-1;
-                             executionLengthRand.Next(697);
-                            Monitor.Wait(writeLock);
-                            temp= count++;
-                             executionLengthRand.Next(997);
-                            Monitor.PulseAll(writeLock);
+                            Monitor.TryEnter(writeLock);
+                            try
+                            {
+                                executionLengthRand.Next(697);
+                                temp = count++;
+                                executionLengthRand.Next(997);
+                            }
+                            finally
+                            {
+                                Monitor.Exit(writeLock);
+                            }
                             answer.Push(temp);
                         }
  
                     );
             
-                t.Start();
-            }   
+                threadArray[i].Start();
+            }
+
+            foreach (var t in threadArray)
+            {
+                t.Join();
+            }
 
 
             foreach(var item in answer.Reverse()){
@@ -114,9 +141,10 @@ namespace ThreadingBasics.ThreadingPattern
             object writeLock = new object();
             answer.Clear();
             Random executionLengthRand = new Random();
+            Thread[] threadArray = new Thread[1000];
             for (int i = 0; i < 1000; ++i)
             {
-                var t = new Thread(
+                threadArray[i] = new Thread(
                         () => 
                         {
                             int temp  = -1;
@@ -130,7 +158,13 @@ namespace ThreadingBasics.ThreadingPattern
                             answer.Push(temp);
                         }
                     );
-                t.Start();
+                threadArray[i].Start();
+            }
+
+
+            foreach (var t in threadArray) 
+            {
+                t.Join();
             }
 
             foreach (var item in answer.Reverse()) 
