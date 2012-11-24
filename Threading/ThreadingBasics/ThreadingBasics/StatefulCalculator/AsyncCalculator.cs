@@ -52,22 +52,51 @@ namespace ThreadingBasics.StatefulCalculator
 
         //public IAsyncResult AddAsync(AsyncIOCompletion
 
-        void GetNumberOfPrimeNumbersInArrayCallback(IAsyncResult result)
+        void GetBinaryOperationCallback(IAsyncResult result)
         {
             var asyncState = result.AsyncState as AsyncState;
-            //var del = asyncState.Del;
-            //var numberOfPrimes = del.EndInvoke(result);
-            Console.WriteLine();
+            var del = asyncState._delegateFunc as Func<float,float,float>;
+            var ret  = del.EndInvoke(result);
+            Console.WriteLine("Result" + ret);
         }
+
+        void GetUniaryOperationCallback(IAsyncResult result)
+        {
+            var asyncState = result.AsyncState as AsyncState;
+            var del = asyncState._delegateFunc as Func<float,float>;
+            var ret = del.EndInvoke(result);
+            Console.WriteLine("Result" + ret);
+        }
+
 
         public void Run()
         {
-            int right, left;
+            
             while(true)
             {
                 String key = Console.ReadLine(); 
-                key = key.Trim();
-                //if(key.CompareTo("a"))
+                float right = 1.0F;
+                float left = 2.0F;
+                float ret;
+                key = key.Trim().ToLower();
+                if (key.CompareTo("a") ==0)
+                { 
+                    //IAsyncResult result = new Asyn
+                    //BeginAdditon(right,left,GetBinaryOperationCallback,state);
+                    //ret = EndAddition();
+                }
+                if(key.CompareTo("d")==0)
+                {
+                }
+                if(key.CompareTo("n")==0)
+                {
+                }
+                if(key.CompareTo("s")==0)
+                {
+                }
+                if(key.CompareTo("m")==0)
+                {
+                }
                     
             }
         }
