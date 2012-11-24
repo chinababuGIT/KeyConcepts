@@ -82,6 +82,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendezvous.cs" />
+    <Compile Include="StatefulCalculator\AsyncCalculator.cs" />
     <Compile Include="ThreadingDataStructure\ReaderWriterLock.cs" />
     <Compile Include="ThreadingDataStructure\ThreadedFirstInFirstoutQueuet.cs" />
     <Compile Include="ThreadingDataStructure\ThreadList.cs" />

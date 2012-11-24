@@ -1,0 +1,6 @@
+﻿  ClassReview.cpp
+c:\users\administrator\documents\github\keyconcepts\cpluscplus\cppreview\cppreview\classreview.cpp(24): warning C4200: nonstandard extension used : zero-sized array in struct/union
+          Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
+c:\users\administrator\documents\github\keyconcepts\cpluscplus\cppreview\cppreview\classreview.cpp(50): error C2143: syntax error : missing ';' before '}'
+c:\users\administrator\documents\github\keyconcepts\cpluscplus\cppreview\cppreview\classreview.cpp(29): error C2440: '=' : cannot convert from 'int *' to 'int []'
+          There are no conversions to array types, although there are conversions to references or pointers to arrays

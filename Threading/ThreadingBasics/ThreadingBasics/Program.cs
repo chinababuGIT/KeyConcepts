@@ -82,10 +82,10 @@ namespace ThreadingBasics
                 threadArray[i] = new Thread(
                         ()=>{
                             multiplex.Enter();
-                            Thread.Sleep(exec.Next(586));
+                            Thread.Sleep(exec.Next(576));
                             temp = ++counter;
                             multiplex.Release();
-                            Thread.Sleep(exec.Next(86));
+                            Thread.Sleep(exec.Next(146));
                             answer.Push(temp);       
                         }
                     );

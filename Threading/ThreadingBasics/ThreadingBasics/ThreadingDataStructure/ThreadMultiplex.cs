@@ -20,18 +20,20 @@ namespace ThreadingBasics.ThreadingDataStructure
 
         public bool Enter()
         {
+                bool ret;
                 changeThreadNumber.WaitOne();
                 if (threadsInCS <= numberOfThreads)
                 {
                     ++threadsInCS;
                     changeThreadNumber.Set();
-                    return isRoomFull.Set();
+                    ret = isRoomFull.Set();
                 }
                 else
                 {
                     isRoomFull.WaitOne();
-                    return false;
+                    ret = true;
                 }
+                return ret;
         }
 
         public void Release()
