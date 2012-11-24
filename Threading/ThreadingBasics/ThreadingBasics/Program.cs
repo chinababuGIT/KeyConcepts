@@ -206,6 +206,20 @@ namespace ThreadingBasics
 
         }
 
+        static bool WriteFileContentCalBack(byte[] buffer, IAsyncResult result)
+        {
+            bool ret = false;
+            FileAsyncWriteResult _fileWriteResult = result as FileAsyncWriteResult;
+            if(_fileWriteResult!=null)
+            {
+                Func<byte[], bool> writeDelegate = _fileWriteResult.Del;
+                writeDelegate.EndInvoke(result);
+                ret = true;
+            }
+
+            return ret;
+        }
+
         static void CallFileStreamReadWriter() 
         {
             using (FileStreamReadWriter fsRW = new FileStreamReadWriter(@"C:\\temp\\NEInstX64")) 
@@ -222,6 +236,20 @@ namespace ThreadingBasics
     internal class FileAsyncWriteResult : IDisposable, IAsyncResult 
     {
        // delegate Func<byte[], bool> writeFileContent ;
+
+
+        Func<byte[], bool> _asyncCallback;
+        Object _state;
+
+        public FileAsyncWriteResult(AsyncCallback callback, Object state)
+        {
+            this._asyncCallback = callback;
+            this._state = state;
+        }
+
+        public AsyncCallback Del { get{return _asyncCallback;} private set;}
+       
+
         private bool isDisposed;
 
         private void Dispose(bool disposing)
@@ -253,7 +281,7 @@ namespace ThreadingBasics
 
         public bool CompletedSynchronously
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public bool IsCompleted
@@ -266,6 +294,16 @@ namespace ThreadingBasics
     internal class FileAsyncReadResult : IDisposable, IAsyncResult 
     {
        // delegate Func<byte[]> readFileContent;
+        Func<bool> _readCalback;
+        Object _asyncState;
+
+        public FileAsyncReadResult(AsyncCallback  readCallBack, object state)
+        {
+            this._readCalback = readCallBack;
+            this._asyncState = state;
+        }
+
+
         private bool isDisposed;
         private void Dispose(bool disposing)
         {
@@ -296,7 +334,7 @@ namespace ThreadingBasics
 
         public bool CompletedSynchronously
         {
-            get { throw new NotImplementedException(); }
+            get { return false; }
         }
 
         public bool IsCompleted
@@ -325,6 +363,7 @@ namespace ThreadingBasics
                                                      
            //                                          };
            //// IAsyncResult result= new object
+            IAsyncResult FileAsyncWriteResult = new FileAsyncWriteResult();
             return false;
         
         }
