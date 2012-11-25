@@ -36,13 +36,15 @@ namespace ThreadingBasics.StatefulCalculator
 
     internal class AsyncState 
     {
-        public AsyncState(Delegate del, object state) 
+        public AsyncState(string operationName, Delegate del, object state) 
         {
+            this._operationName = operationName;
             this._delegateFunc = del;
             this._state = state;
         }
         public Delegate _delegateFunc { get; private set; }
         public object _state { get; private set; }
+        public string _operationName { get; private set; }
     
     }
 
@@ -50,14 +52,12 @@ namespace ThreadingBasics.StatefulCalculator
     {
         Random runlength = new Random();
 
-        //public IAsyncResult AddAsync(AsyncIOCompletion
-
         void GetBinaryOperationCallback(IAsyncResult result)
         {
             var asyncState = result.AsyncState as AsyncState;
             var del = asyncState._delegateFunc as Func<float,float,float>;
             var ret  = del.EndInvoke(result);
-            Console.WriteLine("Result" + ret);
+            Console.WriteLine("Invoked " + asyncState._operationName + " Result is " + ret);
         }
 
         void GetUniaryOperationCallback(IAsyncResult result)
@@ -65,39 +65,56 @@ namespace ThreadingBasics.StatefulCalculator
             var asyncState = result.AsyncState as AsyncState;
             var del = asyncState._delegateFunc as Func<float,float>;
             var ret = del.EndInvoke(result);
-            Console.WriteLine("Result" + ret);
+            Console.WriteLine("Invoked " + asyncState._operationName + " Result is " + ret);
         }
 
-
         public void Run()
-        {
-            
+        {      
             while(true)
             {
-                String key = Console.ReadLine(); 
-                float right = 1.0F;
-                float left = 2.0F;
-                float ret;
-                key = key.Trim().ToLower();
-                if (key.CompareTo("a") ==0)
-                { 
-                    //IAsyncResult result = new Asyn
-                    //BeginAdditon(right,left,GetBinaryOperationCallback,state);
-                    //ret = EndAddition();
-                }
-                if(key.CompareTo("d")==0)
+                String[] key = Console.ReadLine().Split('/');
+                if (key.Length == 3)
                 {
+                    String operation = key[0].Trim().ToLower();
+                    float right = float.NaN;
+                    float.TryParse(key[1].Trim(), out right);
+                    float left = float.NaN;
+                    float.TryParse(key[2].Trim(), out left);
+                    float result = float.NaN;
+                    object state = new Object();
+                    if (operation.CompareTo("a") == 0)
+                    {
+                        var _asyncresult = BeginAdditon(right, left, GetBinaryOperationCallback, state);
+                        //result = EndAddition(_asyncresult);
+
+                    }
+                    else if (operation.CompareTo("d") == 0)
+                    {
+                        var _asyncResult = BeginDivision(right, left, GetBinaryOperationCallback, state);
+                        //result = EndDivision(_asyncResult);
+                    }
+                    else if (operation.CompareTo("n") == 0)
+                    {
+                        var _asyncResult = BeginNegation(right, GetUniaryOperationCallback, state);
+                        //result = EndNegation(_asyncResult);
+                    }
+                    else if (operation.CompareTo("s") == 0)
+                    {
+                        var _asyncResult = BeginSubtraction(right, left, GetBinaryOperationCallback, state);
+                        //result = EndSubtraction(_asyncResult);
+                    }
+                    else if (operation.CompareTo("m") == 0)
+                    {
+                        var _asyncResult = BeginMultiplication(right, left, GetBinaryOperationCallback, state);
+                        //result = EndMultiplication(_asyncResult);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Bad operation");
+                    }
+
+                    Console.WriteLine("Form MainThread Result is " + result);
                 }
-                if(key.CompareTo("n")==0)
-                {
-                }
-                if(key.CompareTo("s")==0)
-                {
-                }
-                if(key.CompareTo("m")==0)
-                {
-                }
-                    
             }
         }
 #region AsyncOperation
@@ -107,7 +124,7 @@ namespace ThreadingBasics.StatefulCalculator
         public IAsyncResult BeginAdditon(float right, float left, AsyncCallback computeCallBack, object state)
         {
             Func<float,float,float> addition = new Func<float,float,float>(this.Add);
-            AsyncState asyncState = new AsyncState(addition, state);
+            AsyncState asyncState = new AsyncState("Addition", addition, state);
             return addition.BeginInvoke(right, left, computeCallBack, asyncState);
             
         }
@@ -126,7 +143,7 @@ namespace ThreadingBasics.StatefulCalculator
         public IAsyncResult BeginSubtraction(float right, float left, AsyncCallback computeCallBack, object state)
         {
             Func<float, float, float> subtraction = new Func<float, float, float>(this.Subtract);
-            AsyncState asyncState = new AsyncState(subtraction, state);
+            AsyncState asyncState = new AsyncState("Subtraction",subtraction, state);
             return subtraction.BeginInvoke(right, left, computeCallBack, asyncState);
         }
 
@@ -143,13 +160,12 @@ namespace ThreadingBasics.StatefulCalculator
         public IAsyncResult BeginMultiplication(float right, float left, AsyncCallback computeCallBack, object state)
         {
             Func<float, float, float> multiplication = new Func<float, float, float>(this.Multiply);
-            AsyncState asyncState = new AsyncState(multiplication, state);
+            AsyncState asyncState = new AsyncState("Multiplication", multiplication, state);
             return multiplication.BeginInvoke(right, left, computeCallBack, asyncState);
         }
 
         public float EndMultiplication(IAsyncResult result)
         {
-            //float ret = (float)result.AsyncState;
             AsyncState asyncState = result.AsyncState as AsyncState;
             Func<float, float, float> multiplication = asyncState._delegateFunc as Func<float,float,float>;
             float ret = multiplication.EndInvoke(result);
@@ -160,7 +176,7 @@ namespace ThreadingBasics.StatefulCalculator
         public IAsyncResult BeginDivision(float right, float left, AsyncCallback computeCallBack, object state)
         {
             Func<float, float, float> division = new Func<float, float, float>(this.Division);
-            AsyncState asyncState = new AsyncState(division, state);
+            AsyncState asyncState = new AsyncState("Divison", division, state);
             return division.BeginInvoke(right, left, computeCallBack, asyncState);
         }
 
@@ -177,7 +193,7 @@ namespace ThreadingBasics.StatefulCalculator
         public IAsyncResult BeginNegation(float operand, AsyncCallback computeCallback, object state)
         {
             Func<float, float> negation = new Func<float, float>(this.Negative);
-            AsyncState asyncState = new AsyncState(negation, state);
+            AsyncState asyncState = new AsyncState("Negation", negation, state);
             return negation.BeginInvoke(operand,computeCallback, asyncState);
         }
 

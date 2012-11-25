@@ -7,6 +7,7 @@ using System.Threading;
 using System.IO;
 using ThreadingBasics.ThreadingPattern;
 using ThreadingBasics.ThreadingDataStructure;
+using ThreadingBasics.StatefulCalculator;
 
 namespace ThreadingBasics
 {
@@ -27,8 +28,10 @@ namespace ThreadingBasics
             //SimpleMultualExclusiong.MultutualExclusionUsingLock();
             //SimpleMultualExclusiong.MultualExclusiongUsingSemaphore();
             //SimpleMultualExclusiong.MultualExclusionUsingMonitor();
-            TestMultiplex();
+            //TestMultiplex();
             //SemaphoreMultiplex();
+            AsyncCalculator calculator = new AsyncCalculator();
+            calculator.Run();
         }
 
         static void SemaphoreMultiplex() 
@@ -206,199 +209,198 @@ namespace ThreadingBasics
 
         }
 
-        static bool WriteFileContentCalBack(byte[] buffer, IAsyncResult result)
-        {
-            bool ret = false;
-            FileAsyncWriteResult _fileWriteResult = result as FileAsyncWriteResult;
-            if(_fileWriteResult!=null)
-            {
-                Func<byte[], bool> writeDelegate = _fileWriteResult.Del;
-                writeDelegate.EndInvoke(result);
-                ret = true;
-            }
+        //static bool WriteFileContentCalBack(byte[] buffer, IAsyncResult result)
+        //{
+        //    bool ret = false;
+        //    FileAsyncWriteResult _fileWriteResult = result as FileAsyncWriteResult;
+        //    if(_fileWriteResult!=null)
+        //    {
+        //        Func<byte[], bool> writeDelegate = _fileWriteResult.Del as Func<byte[], bool>;
+        //        writeDelegate.EndInvoke(result);
+        //        ret = true;
+        //    }
 
-            return ret;
-        }
+        //    return ret;
+        //}
 
-        static void CallFileStreamReadWriter() 
-        {
-            using (FileStreamReadWriter fsRW = new FileStreamReadWriter(@"C:\\temp\\NEInstX64")) 
-            {
-                string msg = "thsi is s test";
-                byte[] writeBuffer = Encoding.ASCII.GetBytes(msg);
+        //static void CallFileStreamReadWriter() 
+        //{
+        //    using (FileStreamReadWriter fsRW = new FileStreamReadWriter(@"C:\\temp\\NEInstX64")) 
+        //    {
+        //        string msg = "thsi is s test";
+        //        byte[] writeBuffer = Encoding.ASCII.GetBytes(msg);
 
             
             
-            }; 
-        }
+        //    }; 
+        //}
     }
 
-    internal class FileAsyncWriteResult : IDisposable, IAsyncResult 
-    {
-       // delegate Func<byte[], bool> writeFileContent ;
+    //internal class FileAsyncWriteResult : IDisposable, IAsyncResult 
+    //{
+    //   // delegate Func<byte[], bool> writeFileContent ;
 
 
-        Func<byte[], bool> _asyncCallback;
-        Object _state;
+    //    Func<byte[], bool> _asyncCallback;
+    //    Object _state;
 
-        public FileAsyncWriteResult(AsyncCallback callback, Object state)
-        {
-            this._asyncCallback = callback;
-            this._state = state;
-        }
+    //    public FileAsyncWriteResult(AsyncCallback callback, Object state)
+    //    {
+    //        this._asyncCallback = callback as Func<byte[],bool>;
+    //        this._state = state;
+    //    }
 
-        public AsyncCallback Del { get{return _asyncCallback;} private set;}
+    //    public AsyncCallback Del { get{return _asyncCallback;}}
        
 
-        private bool isDisposed;
+    //    private bool isDisposed;
 
-        private void Dispose(bool disposing)
-        {
-            if (!isDisposed) 
-            {
-                if (!disposing) 
-                { 
+    //    private void Dispose(bool disposing)
+    //    {
+    //        if (!isDisposed) 
+    //        {
+    //            if (!disposing) 
+    //            { 
                     
-                }
-            }
-        }
+    //            }
+    //        }
+    //    }
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+    //    public void Dispose()
+    //    {
+    //        Dispose(true);
+    //        GC.SuppressFinalize(this);
+    //    }
 
-        public object AsyncState
-        {
-            get { throw new NotImplementedException(); }
-        }
+    //    public object AsyncState
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
 
-        public WaitHandle AsyncWaitHandle
-        {
-            get { throw new NotImplementedException(); }
-        }
+    //    public WaitHandle AsyncWaitHandle
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
 
-        public bool CompletedSynchronously
-        {
-            get { return false; }
-        }
+    //    public bool CompletedSynchronously
+    //    {
+    //        get { return false; }
+    //    }
 
-        public bool IsCompleted
-        {
-            get { throw new NotImplementedException(); }
-        }
-    }
+    //    public bool IsCompleted
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
+    //}
+
+    //internal class FileAsyncReadResult : IDisposable, IAsyncResult 
+    //{
+    //   // delegate Func<byte[]> readFileContent;
+    //    Func<bool> _readCalback;
+    //    Object _asyncState;
+
+    //    public FileAsyncReadResult(AsyncCallback  readCallBack, object state)
+    //    {
+    //        this._readCalback = readCallBack;
+    //        this._asyncState = state;
+    //    }
 
 
-    internal class FileAsyncReadResult : IDisposable, IAsyncResult 
-    {
-       // delegate Func<byte[]> readFileContent;
-        Func<bool> _readCalback;
-        Object _asyncState;
-
-        public FileAsyncReadResult(AsyncCallback  readCallBack, object state)
-        {
-            this._readCalback = readCallBack;
-            this._asyncState = state;
-        }
-
-
-        private bool isDisposed;
-        private void Dispose(bool disposing)
-        {
-            if (!isDisposed) 
-            {
-                if (!disposing) 
-                { 
+    //    private bool isDisposed;
+    //    private void Dispose(bool disposing)
+    //    {
+    //        if (!isDisposed) 
+    //        {
+    //            if (!disposing) 
+    //            { 
                     
-                }
-            }
-        }
+    //            }
+    //        }
+    //    }
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+    //    public void Dispose()
+    //    {
+    //        Dispose(true);
+    //        GC.SuppressFinalize(this);
+    //    }
 
-        public object AsyncState
-        {
-            get { throw new NotImplementedException(); }
-        }
+    //    public object AsyncState
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
 
-        public WaitHandle AsyncWaitHandle
-        {
-            get { throw new NotImplementedException(); }
-        }
+    //    public WaitHandle AsyncWaitHandle
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
 
-        public bool CompletedSynchronously
-        {
-            get { return false; }
-        }
+    //    public bool CompletedSynchronously
+    //    {
+    //        get { return false; }
+    //    }
 
-        public bool IsCompleted
-        {
-            get { throw new NotImplementedException(); }
-        }
-    }
+    //    public bool IsCompleted
+    //    {
+    //        get { throw new NotImplementedException(); }
+    //    }
+    //}
 
-    internal class FileStreamReadWriter :IDisposable
-    {
-        private FileStream fileStreamRW;
-        private bool isDisposed;
+    //internal class FileStreamReadWriter :IDisposable
+    //{
+    //    private FileStream fileStreamRW;
+    //    private bool isDisposed;
 
-        public FileStreamReadWriter(String filename) 
-        {
-            if (!String.IsNullOrEmpty(filename.Trim())) 
-            {
-                fileStreamRW = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.ReadWrite);                
-            }
-        }
+    //    public FileStreamReadWriter(String filename) 
+    //    {
+    //        if (!String.IsNullOrEmpty(filename.Trim())) 
+    //        {
+    //            fileStreamRW = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.ReadWrite);                
+    //        }
+    //    }
 
-        public bool WriteToFileWithContent(byte[] someDataBuffer)
-        {
-           // Func<byte[], bool> writeDelegate = ()=>
-           //                                          {
+    //    public bool WriteToFileWithContent(byte[] someDataBuffer)
+    //    {
+    //       // Func<byte[], bool> writeDelegate = ()=>
+    //       //                                          {
                                                      
-           //                                          };
-           //// IAsyncResult result= new object
-            IAsyncResult FileAsyncWriteResult = new FileAsyncWriteResult();
-            return false;
+    //       //                                          };
+    //       //// IAsyncResult result= new object
+    //        IAsyncResult FileAsyncWriteResult = new FileAsyncWriteResult();
+    //        return false;
         
-        }
+    //    }
 
-        public bool ReadContentFromFile() 
-        {
+    //    public bool ReadContentFromFile() 
+    //    {
 
-            return false;
-        }
+    //        return false;
+    //    }
 
 
-        public void Dispose(bool disposing) 
-        {
-            if(!isDisposed)
-            {
-                if (disposing) 
-                {
-                    //clean up managed resource
-                    fileStreamRW.Dispose();            
-                }
-                //No unmanaged resource here.
-            }
-            isDisposed = true;
-        }
+    //    public void Dispose(bool disposing) 
+    //    {
+    //        if(!isDisposed)
+    //        {
+    //            if (disposing) 
+    //            {
+    //                //clean up managed resource
+    //                fileStreamRW.Dispose();            
+    //            }
+    //            //No unmanaged resource here.
+    //        }
+    //        isDisposed = true;
+    //    }
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+    //    public void Dispose()
+    //    {
+    //        Dispose(true);
+    //        GC.SuppressFinalize(this);
+    //    }
 
-        ~FileStreamReadWriter() 
-        {
-            //Cleaning up unmanaged resource only
-            Dispose(false);
-        }
-    }
+    //    ~FileStreamReadWriter() 
+    //    {
+    //        //Cleaning up unmanaged resource only
+    //        Dispose(false);
+    //    }
+    //}
 }
