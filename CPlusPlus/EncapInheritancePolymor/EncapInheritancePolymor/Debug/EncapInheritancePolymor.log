@@ -1,14 +1,34 @@
-﻿Build started 11/1/2012 1:48:13 PM.
-     1>Project "C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\EncapInheritancePolymor\EncapInheritancePolymor.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
+﻿Build started 11/24/2012 10:26:57 PM.
+     1>Project "C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\EncapInheritancePolymor\EncapInheritancePolymor.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\EncapInheritancePolymor.lastbuildstate".
+       InitializeBuildStatus:
          Creating "Debug\EncapInheritancePolymor.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\EncapInheritancePolymor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\EncapInheritancePolymor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt EncapInheritancePolymor.cpp
          EncapInheritancePolymor.cpp
-     1>c:\users\administrator\documents\github\keyconcepts\cplusplus\encapinheritancepolymor\encapinheritancepolymor\encapinheritancepolymor.cpp(19): error C3892: 'pi' : you cannot assign to a variable that is const
-     1>Done Building Project "C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\EncapInheritancePolymor\EncapInheritancePolymor.vcxproj" (build target(s)) -- FAILED.
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\EncapInheritancePolymor.exe.embed.manifest.res" Debug\EncapInheritancePolymor_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\EncapInheritancePolymor.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.lib" /MACHINE:X86 Debug\EncapInheritancePolymor.exe.embed.manifest.res
+         Debug\EncapInheritancePolymor.obj
+         Debug\stdafx.obj
+       Manifest:
+         Deleting file "Debug\EncapInheritancePolymor.exe.embed.manifest".
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\EncapInheritancePolymor.exe.embed.manifest" /manifest Debug\EncapInheritancePolymor.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\EncapInheritancePolymor.exe.embed.manifest.res" Debug\EncapInheritancePolymor_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\EncapInheritancePolymor.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.lib" /MACHINE:X86 Debug\EncapInheritancePolymor.exe.embed.manifest.res
+         Debug\EncapInheritancePolymor.obj
+         Debug\stdafx.obj
+         EncapInheritancePolymor.vcxproj -> C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\Debug\EncapInheritancePolymor.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\EncapInheritancePolymor.unsuccessfulbuild".
+         Touching "Debug\EncapInheritancePolymor.lastbuildstate".
+     1>Done Building Project "C:\Users\Administrator\Documents\GitHub\KeyConcepts\CPlusPlus\EncapInheritancePolymor\EncapInheritancePolymor\EncapInheritancePolymor.vcxproj" (rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.68
+Time Elapsed 00:00:02.13

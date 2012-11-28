@@ -4,8 +4,8 @@ using System.Threading;
 
 namespace ThreadingBasics.ThreadingDataStructure
 {
-    //Multiplex enforces n positve number of threads
-    //in cricitcal section
+    // Multiplex enforces a FIXED POSITIVE N number of threads
+    // to be in cricitcal section
     public sealed class ThreadMultiplex
     {
         int numberOfThreads;
@@ -15,7 +15,9 @@ namespace ThreadingBasics.ThreadingDataStructure
 
         public ThreadMultiplex(int threadNo)
         {
-            numberOfThreads = threadNo > 0 ? threadNo: 0;
+            if (threadNo > 0)
+                Interlocked.Exchange(ref numberOfThreads, threadNo);
+            //numberOfThreads = threadNo > 0 ? threadNo: 0;
         }
 
         public bool Enter()
@@ -24,7 +26,8 @@ namespace ThreadingBasics.ThreadingDataStructure
                 changeThreadNumber.WaitOne();
                 if (threadsInCS <= numberOfThreads)
                 {
-                    ++threadsInCS;
+                    //++threadsInCS;
+                    Interlocked.Increment(ref threadsInCS);
                     changeThreadNumber.Set();
                     ret = isRoomFull.Set();
                 }
@@ -39,7 +42,8 @@ namespace ThreadingBasics.ThreadingDataStructure
         public void Release()
         {
             changeThreadNumber.WaitOne();
-            --threadsInCS;
+            //--threadsInCS;
+            Interlocked.Decrement(ref threadsInCS);
             changeThreadNumber.Set();
             isRoomFull.Set();    
         }
