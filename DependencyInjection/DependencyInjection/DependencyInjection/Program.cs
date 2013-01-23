@@ -6,14 +6,10 @@
     using ClassCImpl;
     using DependencyInjectionExample;
 
-    
-
-
     class Program
     {
         static void Main(string[] args)
         {
-
             //Case 1 using Class B
             Console.WriteLine("Mai progrram now acts as the IOC container. But it can be done runtime via refelction and reading the app config");
 
